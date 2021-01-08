@@ -5,7 +5,7 @@ function fetchCountries(countryName) {
   return fetch(url)
     .then(res => res.json())
     .then(country => checkAmountOfCountries(country))
-    .catch(error => console.log(error));
+    .catch(console.log);
 }
 
 export default fetchCountries;
