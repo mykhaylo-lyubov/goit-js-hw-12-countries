@@ -2,9 +2,17 @@ import countriesSearchTemplate from '../templates-handlebars/countries-search-te
 import relevantCountryTemplate from '../templates-handlebars/relevant-country-template.hbs';
 import refs from './refs.js';
 
+import { error } from '@pnotify/core';
+import '@pnotify/core/dist/PNotify.css';
+import '@pnotify/core/dist/BrightTheme.css';
+import { defaults } from '@pnotify/core';
+defaults.delay = '1000';
+
 function checkAmountOfCountries(country) {
   if (country.length >= 10) {
-    console.log('More than 10 countries');
+    error({
+      text: 'Too many matches found. Please, enter a more specific value!',
+    });
   }
   if (country.length < 10 && country.length >= 2) {
     refs.listItem.insertAdjacentHTML(
