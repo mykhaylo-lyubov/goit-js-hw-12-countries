@@ -1,12 +1,7 @@
 import countriesSearchTemplate from '../templates-handlebars/countries-search-template.hbs';
 import relevantCountryTemplate from '../templates-handlebars/relevant-country-template.hbs';
 import refs from './refs.js';
-
-import { error } from '@pnotify/core';
-import '@pnotify/core/dist/PNotify.css';
-import '@pnotify/core/dist/BrightTheme.css';
-import { defaults } from '@pnotify/core';
-defaults.delay = '1000';
+import error from './pnotify.js';
 
 function checkAmountOfCountries(country) {
   if (country.length >= 10) {

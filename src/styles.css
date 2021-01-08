@@ -24,6 +24,8 @@ body {
   width: 400px;
   margin-right: auto;
   margin-left: auto;
+  border: solid red 2px;
+  border-radius: 5px;
 }
 
 .list {
@@ -34,7 +36,6 @@ li {
   margin-top: 20px;
 }
 .title {
-  display: block;
   text-align: center;
   font-size: 36px;
   font-weight: 700;
