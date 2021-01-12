@@ -1,7 +1,8 @@
 import countriesSearchTemplate from '../templates-handlebars/countries-search-template.hbs';
 import relevantCountryTemplate from '../templates-handlebars/relevant-country-template.hbs';
 import refs from './refs.js';
-import error from './pnotify.js';
+import error from './pnotify';
+import { info } from '@pnotify/core/dist/PNotify.js';
 
 function checkAmountOfCountries(country) {
   if (country.length >= 10) {
@@ -20,6 +21,9 @@ function checkAmountOfCountries(country) {
       'afterbegin',
       relevantCountryTemplate(country),
     );
+  }
+  if (country.status === 404) {
+    info({ text: 'Country was not found' });
   }
 }
 
