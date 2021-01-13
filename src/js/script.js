@@ -8,9 +8,9 @@ const debouncedInputCallback = debounce(event => {
     refs.listItem.innerHTML = '';
     return;
   }
-  fetchCountries(event.target.value)
-    .then(country => checkAmountOfCountries(country))
-    .catch(console.log);
+  fetchCountries(event.target.value).then(country => {
+    checkAmountOfCountries(country);
+  });
   refs.listItem.innerHTML = '';
 }, 500);
 

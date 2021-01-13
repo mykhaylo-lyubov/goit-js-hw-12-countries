@@ -5,6 +5,9 @@ import error from './pnotify';
 import { info } from '@pnotify/core/dist/PNotify.js';
 
 function checkAmountOfCountries(country) {
+  if (country === undefined) {
+    return info({ text: 'Country was not found' });
+  }
   if (country.length >= 10) {
     error({
       text: 'Too many matches found. Please, enter a more specific value!',
@@ -21,9 +24,6 @@ function checkAmountOfCountries(country) {
       'afterbegin',
       relevantCountryTemplate(country),
     );
-  }
-  if (country.status === 404) {
-    info({ text: 'Country was not found' });
   }
 }
 
